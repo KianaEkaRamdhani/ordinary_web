@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Kimiawi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('image/papers.co-ap99-google-deepmind-alphago-ai-illustration-29-wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .tab-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.8); 
+            border-radius: 8px;
+        }
+        .message {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .message .bubble {
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: right;
+        }
+        .input-container {
+            display: flex;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-top: 1px solid #ddd;
+        }
+        .input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .input-container button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Ordinary People</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Search.html">Search</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messageText = input.value;
+            if (messageText.trim() !== "") {
+                const messagesContainer = document.getElementById('messages');
+
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+
+                const bubbleElement = document.createElement('div');
+                bubbleElement.classList.add('bubble');
+                bubbleElement.innerText = messageText;
+
+                messageElement.appendChild(bubbleElement);
+                messagesContainer.appendChild(messageElement);
+
+                input.value = "";
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
