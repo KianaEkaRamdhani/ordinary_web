@@ -3,71 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Menu</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Vito</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('image/anime-inuyasha-inuyasha-character-sesshōmaru-inuyasha-wallpaper-preview.JPG');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth; 
         }
-
-        .container {
-            text-align: center;
-            background-color: rgba(112, 208, 214, 0.8); 
+        header {
+            background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        h1 {
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+        header nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        header nav a:hover {
+            color: #e91e63;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-
-        .btn {
+        .hero h2 {
+            font-size: 2em;
+            color: #e91e63;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .about, .services, .projects, .contact {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .about h2, .services h2, .projects h2, .contact h2 {
+            color: #333;
+            border-bottom: 2px solid #e91e63;
             display: inline-block;
-            padding: 15px 30px; 
-            background-color: #007bff;
-            color: white;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .about p, .services p, .projects p, .contact p {
+            color: #666;
+            font-size: 1em;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .services .service-item, .projects .project-item {
+            display: inline-block;
+            width: calc(33.333% - 40px);
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .services .service-item img, .projects .project-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .contact a {
+            color: #e91e63;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 24px; 
-            transition: background-color 0.3s ease;
+            font-size: 1.2em;
         }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .login-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .login-btn:hover {
-            background-color: #218838;
+        .contact a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <a href="reg.html" class="login-btn">Login/Sign In</a>
-    <div class="container">
-        <h1>Welcome Home Cheater</h1>
-        <a href="Search.html" class="btn">Start</a>
-    </div>
+    <header>
+        <h1>M Alvito Dwi Anggara Pradita</h1>
+        <nav>
+            <a href="#tentang">Tentang Saya</a>
+            <a href="#hobi">Hobi dan Minat</a>
+            <a href="#proyek">Proyek</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>UI & UX Designer</h2>
+        <p>Biasa dipanggil Vito</p>
+        <img src="path-to-your-image/profile.jpg" alt="Foto Rojal">
+    </section>
+
+    <section class="about" id="tentang">
+        <h2>Tentang Saya</h2>
+        <p>cringe.</p>
+        <img src="path-to-your-image/about-me.jpg" alt="Foto tentang saya">
+    </section>
+
+    <section class="services" id="hobi">
+        <h2>Hobi dan Minat</h2>
+        <div class="service-item">
+            <h3>Website Design</h3>
+            <p>woy wibu</p>
+            <img src="path-to-your-image/web-design.jpg" alt="Foto Hobi dan Minat">
+        </div>
+        <div class="service-item">
+            <h3>App Design</h3>
+            <p>i sleep</p>
+            <img src="path-to-your-image/app-design.jpg" alt="Foto Hobi dan Minat">
+        </div>
+        <div class="service-item">
+            <h3>Graphic Design</h3>
+            <p>turu.</p>
+            <img src="path-to-your-image/graphic-design.jpg" alt="Foto Hobi dan Minat">
+        </div>
+    </section>
+
+    <section class="projects" id="proyek">
+        <h2>Proyek</h2>
+        <div class="project-item">
+            <h3>Proyek 1</h3>
+            <img src="path-to-your-image/project1.jpg" alt="Foto Proyek 1">
+            <p>bang gw anime</p>
+        </div>
+        <div class="project-item">
+            <h3>Proyek 2</h3>
+            <img src="path-to-your-image/project2.jpg" alt="Foto Proyek 2">
+            <p>i sleep</p>
+        </div>
+        <div class="project-item">
+            <h3>Proyek 3</h3>
+            <img src="path-to-your-image/project3.jpg" alt="Foto Proyek 3">
+            <p>gak tau lupa</p>
+        </div>
+    </section>
+
+    <section class="contact" id="kontak">
+        <h2>Kontak</h2>
+        <p>Anda dapat menghubungi saya melalui kanjut: <a href="mailto:kianaekaramdahni@gmail.com.com">kianaekaramdahni@gmail.com</a></p>
+        <img src="path-to-your-image/contact.jpg" alt="Foto Kontak">
+    </section>
 </body>
 </html>
